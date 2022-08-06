@@ -1,9 +1,10 @@
 local oldnc
 oldnc = hookmetamethod(game, "__namecall", function(self, ...)
-    local args = {...}
-        
     if getnamecallmethod() == "FireServer" and self.Name == "Anti" then
-    return wait(9e9)
+        return wait(9e9)
+    end
+    if getnamecallmethod() == "FireServer" and self.Name == "Toggle" then
+        return wait(9e9)
     end
     return oldnc(self, ...)
 end)
